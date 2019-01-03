@@ -18,7 +18,19 @@ or clone the project `git clone https://github.com/khaled-ansary/Restaurant-Revi
 ## Live Version
 You can find a live version of the project [here](https://khaled-ansary.github.io/Restaurant-Review-js/)
 
+## Screenshot
+
+![Screenshot](./restaurant.png)
+
 ## Dependencies
 
 * Google Maps API [https://cloud.google.com/maps-platform/]
 * ServiceWoker [https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers]
+  
+### License
+
+The MIT License
+
+Copyright (c) Md Khaled Hossain Ansary
+
+[License](LICENSE.md)
