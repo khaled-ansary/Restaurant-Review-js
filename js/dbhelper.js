@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
-    return `http://localhost:${port}/data/restaurants.json`;
+    return `./data/restaurants.json`;
   }
 
   /**
@@ -147,26 +147,37 @@ class DBHelper {
   }
 
   /**
-   * Restaurant image URL.
+   * Restaurant list image URL.
    */
-  static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+  static imageUrlForRestaurantList(restaurant) {
+    return (`./img/${restaurant.photograph}`);
   }
+
+  /**
+   * Restaurant page image URL.
+   */
+  static imageUrlForRestaurantInfo(restaurant) {
+    return (`./img/${restaurant.photograph}`);
+  }
+
+  /**
+   * Restaurant image alt attribute
+   */
+   static imageAltForRestaurant(restaurant) {
+     return (`Picture of restaurant ${restaurant.name}`);
+   }
+
+  /**
+   * Restaurant image alt attribute
+   */
+   static ariaLabelLink(restaurant) {
+     return (`Click for more detail about restaurant ${restaurant.name}`);
+   }
 
   /**
    * Map marker for a restaurant.
    */
-   static mapMarkerForRestaurant(restaurant, map) {
-    // https://leafletjs.com/reference-1.3.0.html#marker  
-    const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng],
-      {title: restaurant.name,
-      alt: restaurant.name,
-      url: DBHelper.urlForRestaurant(restaurant)
-      })
-      marker.addTo(newMap);
-    return marker;
-  } 
-  /* static mapMarkerForRestaurant(restaurant, map) {
+  static mapMarkerForRestaurant(restaurant, map) {
     const marker = new google.maps.Marker({
       position: restaurant.latlng,
       title: restaurant.name,
@@ -175,7 +186,6 @@ class DBHelper {
       animation: google.maps.Animation.DROP}
     );
     return marker;
-  } */
+  }
 
 }
-
